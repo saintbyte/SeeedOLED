@@ -1,0 +1,24 @@
+EN:
+If you have problem like:
+RU
+Если у вас проблемы типа:
+\SeeedOLED\SeeedOLED.cpp: In member function 'void SeeedOLED::init()':
+\SeeedOLED\SeeedOLED.cpp:135: error: 'delay' was not declared in this scope
+\SeeedOLED\SeeedOLED.cpp: In member function 'void SeeedOLED::sendCommand(unsigned char)':
+\SeeedOLED\SeeedOLED.cpp:144: error: 'class TwoWire' has no member named 'send'
+\SeeedOLED\SeeedOLED.cpp:145: error: 'class TwoWire' has no member named 'send'
+\SeeedOLED\SeeedOLED.cpp: In member function 'void SeeedOLED::sendData(unsigned char)':
+\SeeedOLED\SeeedOLED.cpp:197: error: 'class TwoWire' has no member named 'send'
+\SeeedOLED\SeeedOLED.cpp:198: error: 'class TwoWire' has no member named 'send'
+
+Or / или
+
+\SeeedOLED\SeeedOLED.cpp: In member function 'void SeeedOLED::sendData(unsigned char)':
+\SeeedOLED\SeeedOLED.cpp:134: error: 'class TwoWire' has no member named 'send'
+\SeeedOLED\SeeedOLED.cpp:135: error: 'class TwoWire' has no member named 'send'
+\SeeedOLED\SeeedOLED.cpp: In member function 'void SeeedOLED::sendCommand(unsigned char)':
+\SeeedOLED\SeeedOLED.cpp:151: error: 'class TwoWire' has no member named 'send'
+\SeeedOLED\SeeedOLED.cpp:152: error: 'class TwoWire' has no member named 'send'
+
+EN:TRY library from this repo
+RU:Поробуйте использовать эту версию библиотеки
