@@ -224,6 +224,15 @@ void SeeedOLED::putString(const char *String)
     }
 }
 
+void SeeedOLED::putString(char *String)
+{
+    unsigned char i=0;
+    while(String[i])
+    {
+        putChar(String[i]);
+        i++;
+    }
+}
 unsigned char SeeedOLED::putNumber(long long_num)
 {
   unsigned char char_buffer[10]="";
@@ -257,6 +266,65 @@ unsigned char SeeedOLED::putNumber(long long_num)
   return f;
 
 }
+
+unsigned char SeeedOLED::putFloat(float float_num)
+{
+    unsigned char char_buffer[10]="";
+    unsigned char i = 0;
+    unsigned char f = 0;
+    long long_num = (long)float_num;
+    int places = 4;
+    
+    if (long_num < 0)
+    {
+        f=1;
+        putChar('-');
+        long_num = -long_num;
+        float_num = -float_num;
+    }
+    else if (long_num == 0)
+    {
+        f=1;
+        putChar('0');
+        return f;
+    }
+    
+    while (long_num > 0)
+    {
+        char_buffer[i++] = long_num % 10;
+        long_num /= 10;
+    }
+    
+    f=f+i;
+    for(; i > 0; i--)
+    {
+        putChar('0'+ char_buffer[i - 1]);
+    }
+    
+    putChar('.');
+    long_num = (float_num*1000.0)- ((long)float_num*1000);
+    if (long_num > 0) {
+        //long_num = 67;//float_num*1000.0;
+        unsigned char char_buffer_f[10]="";
+        i = 0;
+        while (long_num > 0)
+        {
+            char_buffer_f[i++] = long_num % 10;
+            long_num /= 10;
+        }
+        
+        f=f+i;
+        for(; i > 0; i--)
+        {
+            putChar('0'+ char_buffer_f[i - 1]);
+        }
+        
+    }
+    
+    return f;
+    
+}
+
 
 void SeeedOLED::drawBitmap(unsigned char *bitmaparray,int bytes)
 {
