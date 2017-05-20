@@ -81,7 +81,9 @@ void clearDisplay();
 void setBrightness(unsigned char Brightness);
 void putChar(unsigned char c);
 void putString(const char *String);
+void putString(char *String);
 unsigned char putNumber(long n);
+unsigned char putFloat(float n);
 
 void drawBitmap(unsigned char *bitmaparray,int bytes);
 
